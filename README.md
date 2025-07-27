@@ -13,7 +13,7 @@ ICS SimLab Core is a modular, Python-based simulation environment for industrial
 - Real-world attack and defense scenarios
 - HMI and automation testing using simulated sensors and actuators
 
-The system uses a modern, asynchronous Python backend powered by pymodbus == 3.9, and is designed to be extensible, readable, and realistic.
+The system uses a modern, asynchronous Python backend powered by [pymodbus](https://github.com/pymodbus-dev/pymodbus) == 3.9, and is designed to be extensible, readable, and realistic.
 
 Find the world view here [https://github.com/dp-perry/ics-simlab-world](https://github.com/dp-perry/ics-simlab-world)
 
@@ -23,6 +23,42 @@ Find the world view here [https://github.com/dp-perry/ics-simlab-world](https://
 - Live-updating registers representing sensors, actuators, and counters
 - Inter-device logic emulates PLC-like behavior
 - Easy to create new facilities
+- Send register data to Worldview over websockets
+- Receive sensor data from Worldview over websockets
+
+## Requirements
+- pymodbus v3.9.x - it looks like v4 is coming soon and will include breaking changes
+- websocket if a worldview is used
+
+## Virtual Enviroment
+I personally prefer to use virtual environment for python projects. If you are unfamiliar with it, here is what you can do.
+Documentation on virtual environments: [https://docs.python.org/3/library/venv.html](https://docs.python.org/3/library/venv.html)
+```bash
+# windows depending on your python install
+py -m venv ics-env
+# if the above does not work test with one of these below and use that option for all commands
+python3 | python
+# Again this one depends on your python install
+# Activate the virutal enviroment, this will ensure that any installed packages only apply to this project.
+source ics-env/bin/activate
+```
+And now continue with the commands below. Use ```deactivate``` to deactivate the virtual environment. After that, installs apply
+globally again.
+
+## Running a facility
+Right now all scripts default to the bottling plant, the plant can be started by running
+```bash
+# Install packages
+pip install -r requirements.txt
+
+# Start plant
+python3 main.py
+
+# Optional
+python3 ./worldview/server.py
+```
+
+Some example attack scripts are present in ./client.
 
 ## Current facilities
 ### Bottling plant register
@@ -37,7 +73,6 @@ Find the world view here [https://github.com/dp-perry/ics-simlab-world](https://
 - WiP
 
 ## Future
-In honor of VirtuaPlant this project will aim to create these future facilities and protocols.
 
 ### Future facilities
 - Oil Refinery Boiler
