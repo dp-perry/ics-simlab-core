@@ -17,6 +17,11 @@ The system uses a modern, asynchronous Python backend powered by [pymodbus](http
 
 Find the world view here [https://github.com/dp-perry/ics-simlab-world](https://github.com/dp-perry/ics-simlab-world)
 
+#### Further reading on the real world impacts of OT/ICS attacks**
+In 2025, 600 apartment buildings in Ukraine lost heating for two days in sub-zero temperatures because of a malware abusing the Modbus protocol.
+- https://unit42.paloaltonetworks.com/frostygoop-malware-analysis/
+- https://www.dragos.com/blog/protect-against-frostygoop-ics-malware-targeting-operational-technology/
+
 ## Features
 - Modbus TCP Server with multiple simulated devices
 - State-based device simulation
@@ -72,7 +77,7 @@ Some example attack scripts are present in ./client.
 ### Oil Refinery Boiler
 - WiP
 
-## Future
+## Future plans
 
 ### Future facilities
 - Oil Refinery Boiler
