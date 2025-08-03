@@ -19,6 +19,7 @@ Find the world view here [https://github.com/dp-perry/ics-simlab-world](https://
 
 #### Further reading on the real world impacts of OT/ICS attacks**
 In 2025, 600 apartment buildings in Ukraine lost heating for two days in sub-zero temperatures because of a malware abusing the Modbus protocol.
+*" FrostyGoop sends Modbus commands to read or modify data on industrial control systems (ICS) devices, causing damage to the environment where attackers installed it"*
 - https://unit42.paloaltonetworks.com/frostygoop-malware-analysis/
 - https://www.dragos.com/blog/protect-against-frostygoop-ics-malware-targeting-operational-technology/
 
