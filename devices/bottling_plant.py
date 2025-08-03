@@ -1,3 +1,10 @@
+'''
+The bottling plant facility contains a conveyor belt and several sensors. It is means to simulate a single
+process in a larger facility. The bottling plant itself is not aware of the actual bottles, it depends on
+sensor inputs to know when a bottle is underneath the nozzle, and to stop filling when the water reaches a
+certain level in the bottle. It will then restart the conveyor belt until another bottle appears in front
+of the sensor.
+'''
 import asyncio
 import logging
 

@@ -1,3 +1,8 @@
+'''
+server.py is used to send to and receive data from the worldview. It is what links the facility started by the
+main.py script to external in-/outputs.
+'''
+
 import asyncio
 import json
 import websockets
@@ -59,6 +64,8 @@ async def websocket_handler(websocket):
                     write_reg(register, value)
                     print(f"Updated register {register} with value {value}")
 
+                    # this is currently specific to the bottling plant and meant to delay turning the
+                    # bottle sensor back on.
                     if register == 1 and value == 1 and not is_busy:
                         asyncio.create_task(react_to_sensor())
             except asyncio.TimeoutError:
